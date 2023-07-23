@@ -18,18 +18,12 @@ navbarTogglers.forEach((navbarToggler) => {
 })
 
 //header
-
+const scroll = document.querySelector('[data-scroll-top]')
 const header = document.querySelector('[data-header]')
 window.addEventListener('scroll', () => {
   if (window.scrollY > 100) {
     header.classList.add('active')
     scroll.classList.add('active')
-    if (classList.contains('active')) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      })
-    }
   } else {
     header.classList.remove('active')
     scroll.classList.remove('active')
@@ -38,11 +32,9 @@ window.addEventListener('scroll', () => {
 
 //scroll top
 
-const scroll = document.querySelector('[data-scroll-top]')
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    scroll.classList.add('active')
-  } else {
-    scroll.classList.remove('active')
-  }
+scroll.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
 })
